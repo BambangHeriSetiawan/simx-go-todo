@@ -1,0 +1,9 @@
+-- +goose Up
+CREATE TABLE IF NOT EXISTS todos (
+    id VARCHAR(64) PRIMARY KEY,
+    title TEXT NOT NULL,
+    done BOOLEAN NOT NULL DEFAULT FALSE
+);
+
+-- +goose Down
+DROP TABLE IF EXISTS todos;
